@@ -30,6 +30,65 @@ type ProjectInfo = {
 const projectInfo = new Map<string, ProjectInfo>();
 
 // Add entries to the Map
+projectInfo.set("bunnybonanza", {
+  key: "bunnybonanza",
+  name: "Bunny Bonanza",
+  progress: "Building",
+  tags: ["Deep Reinforcement Learning", "3D Game"],
+  icon: (
+    <Image
+      width={100}
+      height={100}
+      src={"/coin.webp"}
+      alt="bunny bonanza logo"
+    />
+  ) as JSX.Element,
+  prevIcon: (
+    <Image width={32} height={32} src={"/coin.webp"} alt="bunny bonanza logo" />
+  ) as JSX.Element,
+  description:
+    "3D game that uses deep reinforcement learning to train a bunny to collect fruits and avoid bombs and holographic tiles.",
+  img: "/coin.webp",
+  video: "https://images.codefoli.com/bunnybonanza.mp4",
+  stack: [
+    "Tensorflow.js",
+    "Pinecone Vector DB",
+    "React Three Fiber",
+    "Next.js",
+  ],
+  title: "Bunny Bonanza",
+  paragraphs: {
+    "1": "Bunny Bonanza is a 3D environment that uses deep reinforcement learning to train a bunny to collect fruits and avoid bombs and holographic tiles. The site is built using React Three Fiber and Next.js, and the deep reinforcement learning model is built using Tensorflow.js.",
+
+    "2": "The website is designed to be a fun and interactive way to learn about deep reinforcement learning and how it can be used to train agents to perform tasks in a 3D environment. The website is currently in development and will be released later this eyar.",
+  },
+});
+projectInfo.set("brainrotjs", {
+  key: "brainrotjs",
+  name: "Brainrot.JS",
+  progress: "Shipped",
+  domain: "brainrotjs.com",
+  tags: ["Machine Learning", "Procedural Video Generation"],
+  icon: (
+    <Image
+      width={100}
+      height={100}
+      src={"https://images.smart.wtf/brainrot.png"}
+      alt="brainrot logo"
+    />
+  ) as JSX.Element,
+  description:
+    "3D game that uses deep reinforcement learning to train a bunny to collect fruits and avoid bombs and holographic tiles.",
+  img: "https://images.smart.wtf/brainrot.png",
+  video: "https://images.smart.wtf/brainrotjs.mp4",
+  stack: ["PyTorch", "Next.js", "Eleven Labs", "Remotion", "AWS", "OpenAI"],
+  title: "Brainrot.JS",
+  website: { name: "brainrotjs.com", href: "https://brainrotjs.com" },
+  paragraphs: {
+    "1": "Brainrot.js does a lot in the background, but abstracts all away from the user so we can say it 'simply generates a short form video from celebrities of your choice who discuss a topic of your choice'. The videos are generated just from a single topic, and a choice of two narrators, and within 2 minutes, your completely custom video is created!",
+    "2": "A brief on how I built it: It is quite complicated but I will try my best to explain in brief. The interface (https://brainrotjs.com) is built with nextjs, tailwind, typescript, and tRPC. It is the interface. We then have the backend... Brace yourself haha. So we need something to store the users requests to generate in an ordered fashion such. We use MySQL DB for this. We then have a Docker Container on a EC2 instance working as a polling function. This is the brains. It invokes OpenAI API to create the transcript, runs a custom inference model built in PyTorch to generate the subtitles for the video at a word-by-word level, posts them in separate SRT files, concats the audio file into a single audio.mp3. The inference model is run with flask, and the polling is a javascript file that infinitely loops. We then merge all this together in remotion. We render our remotion project in 200 separate serverless lambda functions which in parallel fashion render the video and then concat it together. We then host the video on s3, and upload the link to s3. the database is polled on the users end waiting for this link.",
+  },
+});
 projectInfo.set("smartwtf", {
   key: "smartwtf",
   name: "Smart.wtf",
@@ -66,36 +125,36 @@ projectInfo.set("smartwtf", {
   },
 });
 
-projectInfo.set("deepstar", {
-  key: "deepstar",
-  name: "Deep Star",
-  tags: ["Deep Learning Framework"],
-  prevIcon: (
-    <Image width={32} height={32} src={"/deepstar.png"} alt="deepstar logo" />
-  ),
-  icon: (
-    <Image
-      width={100}
-      height={100}
-      className="my-3  rounded-lg border-opacity-50"
-      src={"/deepstar.png"}
-      alt="deepstar logo"
-    />
-  ),
-  description:
-    "Deep learning framework with a PyTorch-like API designed to make Deep Learning topics more students new to Deep Learning",
-  progress: "Building",
-  img: "/deepstar.png",
-  stack: ["Python", "NumPy", "PyTorch"],
-  source: {
-    name: "noahgsolomon/DeepStar",
-    href: "https://github.com/noahgsolomon/DeepStar",
-  },
-  title: "Deep Star",
-  paragraphs: {
-    "1": "Deep Star is a simpler framework to use for those new to Deep Learning and interested in understanding the underlying mechanics. It is being built both to deepen my own understanding of the deep learning ecosystem at a fundamental level, and to hopefully give back to help others get started in ML the right way (hands on).",
-  },
-});
+// projectInfo.set("deepstar", {
+//   key: "deepstar",
+//   name: "Deep Star",
+//   tags: ["Deep Learning Framework"],
+//   prevIcon: (
+//     <Image width={32} height={32} src={"/deepstar.png"} alt="deepstar logo" />
+//   ),
+//   icon: (
+//     <Image
+//       width={100}
+//       height={100}
+//       className="my-3  rounded-lg border-opacity-50"
+//       src={"/deepstar.png"}
+//       alt="deepstar logo"
+//     />
+//   ),
+//   description:
+//     "Deep learning framework with a PyTorch-like API designed to make Deep Learning topics more students new to Deep Learning",
+//   progress: "Building",
+//   img: "/deepstar.png",
+//   stack: ["Python", "NumPy", "PyTorch"],
+//   source: {
+//     name: "noahgsolomon/DeepStar",
+//     href: "https://github.com/noahgsolomon/DeepStar",
+//   },
+//   title: "Deep Star",
+//   paragraphs: {
+//     "1": "Deep Star is a simpler framework to use for those new to Deep Learning and interested in understanding the underlying mechanics. It is being built both to deepen my own understanding of the deep learning ecosystem at a fundamental level, and to hopefully give back to help others get started in ML the right way (hands on).",
+//   },
+// });
 
 projectInfo.set("codefoli", {
   key: "codefoli",

@@ -66,7 +66,7 @@ const ProjectDetails = (props: Props) => {
           src={currentProject.video}
           autoPlay={true}
           loop={true}
-          muted={true}
+          muted={false}
         ></video>
       )}
 
